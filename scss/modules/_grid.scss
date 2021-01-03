@@ -1,16 +1,15 @@
-
-.gallery{
+.gallery {
   display: grid;
   gap: 25px;
   padding: 30px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 1fr 1.2fr;
-  &__item{
+  &__item {
     padding: 0 0 100% 0;
     position: relative;
     overflow: hidden;
-    &:hover{
-      .gallery__img{
+    &:hover {
+      .gallery__img {
         transform: scale(1.05) rotate(-5deg);
       }
     }
@@ -22,12 +21,12 @@
       z-index: 10;
       pointer-events: none;
     }
-    &--big{
+    &--big {
       grid-column: span 2;
       grid-row: span 2;
     }
   }
-  &__img{
+  &__img {
     @include size(100%);
     @include pos($t: 0, $l: 0);
     object-fit: cover;
@@ -39,15 +38,20 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  
+
   &__item {
     position: relative;
     padding: 0 0 100% 0;
-    transition: all 0.3s ease;
+    transition: all .3s ease;
     overflow: hidden;
-    &:hover{
-      .footer__img{
+    &:hover {
+      .footer__img {
         transform: scale(1.1) rotate(-5deg);
+      }
+      &.footer__item{
+        &::before {
+          background: rgba(26, 26, 26, 0);
+        }
       }
     }
     &::before {
@@ -57,6 +61,7 @@
       background: rgba(26, 26, 26, 0.7);
       z-index: 10;
       pointer-events: none;
+      transition: all .3s ease;
     }
   }
   &__img {
@@ -66,5 +71,3 @@
     transition: all 0.3s ease;
   }
 }
-
-
